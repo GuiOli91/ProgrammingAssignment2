@@ -1,7 +1,23 @@
-## Put comments here that give an overall description of what your
-## functions do
+################################################################
+## User: Guilherme Monteiro Oliveira   Git.Login: GuiOli91    ##
+## Programming Assignment 2: Lexical Scoping                  ##
+## Date: 20.01.2019                    Local: Brasil          ##
+################################################################
 
-## Write a short comment describing this function
+##The following functions create a "special" matrix to avoid unnecessary reverse 
+## matrix calculations. When the inverse matrix is calculated a lot through the 
+## code, this can be time-consuming for the processor. Thus, these functions 
+## work together to save the inverse matrix in cache.
+
+## MakeCacheMatrix creates a list of function to:
+# 
+# 1) setmatrix - Set the value of the Matrix
+# 
+# 2) getmatrix - Get the value of the Matrix
+# 
+# 3) getinverse - Get the value of the inverse matrix
+# 
+# 4) setinverse - Set the value of the inverse Matrix
 
 makeCacheMatrix <- function(x = matrix()) {
         
@@ -24,7 +40,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## The cacheSolve receives a list of makeCacheMatrix and calculates the inverse 
+##Matrix, if it was not calculated before or returns the inverse matrix saved 
+##in memory. No test was implemented how it was stated on the assignment.
 
 
 cacheSolve <- function(x, ...) {
@@ -33,7 +51,7 @@ cacheSolve <- function(x, ...) {
         Inv <- x$getinverse()
         
         if(!is.null(Inv)) {
-                message("Returning cached Inversed")
+                message("Returning cached Inverse Matrix")
                 return(Inv)
         } else {
                 
